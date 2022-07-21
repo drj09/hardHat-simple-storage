@@ -5,6 +5,8 @@ require("hardhat-gas-reporter"); // this can help us to identify how to optimise
 
 const RINKEBY_RPC_URL = process.env.RINKEBY_RPC_URL;
 const ACCOUNT_PRIVATE_KEY = process.env.ACCOUNT_PRIVATE_KEY;
+const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY;
+
 module.exports = {
   defaultNetwork: "hardhat",
   networks: {
@@ -17,5 +19,9 @@ module.exports = {
   solidity: "0.8.9",
   gasReporter: {
     enabled: true,
+    outputFile: "gas-report.txt",
+    currency: "USD",
+    noColors: true,
+    coinmarktecap: COINMARKETCAP_API_KEY, // external api to currency conversion
   },
 };
