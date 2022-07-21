@@ -1,6 +1,8 @@
 require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
 require("hardhat-gas-reporter"); // this can help us to identify how to optimise gas further
+require("solidity-coverage");
+
 /** @type import('hardhat/config').HardhatUserConfig */
 
 const RINKEBY_RPC_URL = process.env.RINKEBY_RPC_URL;
